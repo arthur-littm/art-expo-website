@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  get 'peinture/index'
-
-  get 'peinture/show'
-
-  get 'peinture/create'
-
-  get 'peinture/new'
-
-  get 'peinture/update'
+  resources :peinture, only: [:new, :create, :show, :edit, :update, :destroy]
 
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount Attachinary::Engine => "/attachinary"
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
