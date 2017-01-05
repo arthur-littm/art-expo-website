@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :peinture, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :peintures, only: [:new, :create, :show, :edit, :update, :destroy]
 
   root to: 'pages#home'
 

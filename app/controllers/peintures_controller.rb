@@ -1,4 +1,4 @@
-class PeintureController < ApplicationController
+class PeinturesController < ApplicationController
   def index
     @peintures = Peinture.all
   end
@@ -10,7 +10,7 @@ class PeintureController < ApplicationController
   def create
     @peinture = Peinture.new(peinture_params)
     if @peinture.save
-      redirect_to show_peinture(@peinture)
+      redirect_to peinture_path(@peinture)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class PeintureController < ApplicationController
   def update
     @peinture = Peinture.find(params[:id])
     if @peinture.update(peinture_params)
-      redirect_to show_peinture(@peinture)
+      redirect_to peinture_path(@peinture)
     else
       render :edit
     end
@@ -37,6 +37,6 @@ class PeintureController < ApplicationController
   private
 
   def peinture_params
-    params.require(:product).permit(:titre, :description, :photo)
+    params.require(:peinture).permit(:titre, :description, :photo)
   end
 end

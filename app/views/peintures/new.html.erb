@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for @peinture do |f| %>
+  <%= f.input :titre %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
