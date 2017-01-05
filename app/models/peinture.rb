@@ -1,0 +1,3 @@
+class Peinture < ApplicationRecord
+
+end
