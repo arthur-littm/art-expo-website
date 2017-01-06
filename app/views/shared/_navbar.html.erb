@@ -1,13 +1,14 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-  <%= image_tag "logo.png" %>
+    <%= image_tag "logo.png" %>
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
 
     <!-- Text link -->
+    <%= link_to "Mon travail", (root_path + "#peintures"), class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 </div>

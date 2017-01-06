@@ -1,2 +1,14 @@
-<h1>Peinture#show</h1>
-<p>Find me in app/views/peinture/show.html.erb</p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-xs-12">
+      <%= cl_image_tag @peinture.photo.path, class: "peinture-image" %>
+    </div>
+    <div class="col-xs-8 col-md-6 offset-md-3">
+      <h3><%= @peinture.titre %></h3>
+      <p><%= @peinture.description %></p>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.admin %>
+  <%= link_to "Modifier", edit_peinture_path(@peinture), class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -12,6 +12,8 @@ gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 
+gem 'lightbox2-rails'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -19,6 +21,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'devise'
+
 
 group :development, :test do
   gem 'binding_of_caller'

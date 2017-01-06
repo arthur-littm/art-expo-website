@@ -1,8 +1,4 @@
 class PeinturesController < ApplicationController
-  def index
-    @peintures = Peinture.all
-  end
-
   def show
     @peinture = Peinture.find(params[:id])
   end
@@ -18,6 +14,10 @@ class PeinturesController < ApplicationController
 
   def new
     @peinture = Peinture.new
+  end
+
+  def edit
+    @peinture = Peinture.find(params[:id])
   end
 
   def update

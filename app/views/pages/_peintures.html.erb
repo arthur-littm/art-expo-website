@@ -1,16 +1,24 @@
-<div class="container">
+<div class="container" id="peintures">
   <div class="row">
-  <% @peintures.each do |peinture| %>
+    <% @peintures.each do |peinture| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path peinture.photo.path %>);">
         <div class="card-description">
           <h2><%= peinture.titre %></h2>
           <p><%= peinture.description %></p>
         </div>
-        <a class="card-link" href="#" ></a>
+        <%= link_to "", peinture_path(peinture), class: "card-link" %>
+        <!-- <a href="<%= cl_image_path(peinture.photo) %>" data-lightbox="<%= peinture.titre.downcase %>" data-title="<%= peinture.titre %>" class="card-link"></a> -->
+        <% if user_signed_in? %>
+
+        <%= link_to edit_peinture_path(peinture), class: "btn btn-primary btn-xs card-edit-btn" do %>
+        <i class="fa fa-wrench"></i>
+        <% end %>
+        <% end %>
       </div>
     </div>
     <% end %>
+    <% if user_signed_in? && current_user.admin %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-color: whitesmoke;">
         <div class="card-description">
@@ -19,5 +27,6 @@
         <%= link_to "", new_peinture_path, class: "card-link" %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
