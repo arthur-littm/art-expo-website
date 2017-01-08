@@ -1,12 +1,9 @@
 class PeinturesController < ApplicationController
-  def show
-    @peinture = Peinture.find(params[:id])
-  end
 
   def create
     @peinture = Peinture.new(peinture_params)
     if @peinture.save
-      redirect_to peinture_path(@peinture)
+      redirect_to root_path
     else
       render :new
     end
@@ -23,7 +20,7 @@ class PeinturesController < ApplicationController
   def update
     @peinture = Peinture.find(params[:id])
     if @peinture.update(peinture_params)
-      redirect_to peinture_path(@peinture)
+      redirect_to root_path
     else
       render :edit
     end
@@ -32,6 +29,7 @@ class PeinturesController < ApplicationController
   def destroy
     @peinture = Peinture.find(params[:id])
     @peinture.destroy
+    redirect_to root_path
   end
 
   private

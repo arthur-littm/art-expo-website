@@ -7,8 +7,9 @@
           <h2><%= peinture.titre %></h2>
           <p><%= peinture.description %></p>
         </div>
-        <%= link_to "", peinture_path(peinture), class: "card-link" %>
-        <!-- <a href="<%= cl_image_path(peinture.photo) %>" data-lightbox="<%= peinture.titre.downcase %>" data-title="<%= peinture.titre %>" class="card-link"></a> -->
+
+        <%= link_to "", cl_image_path(peinture.photo.path), class: "card-link" %>
+
         <% if user_signed_in? %>
 
         <%= link_to edit_peinture_path(peinture), class: "btn btn-primary btn-xs card-edit-btn" do %>
