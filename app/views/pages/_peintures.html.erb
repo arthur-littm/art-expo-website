@@ -8,8 +8,8 @@
           <p><%= peinture.description %></p>
         </div>
 
-        <a href="<%= peinture.photo.path %>" data-lightbox="image-1" data-title="My caption" class= "card-link">
-        <img src="<%= image_path "banner.jpg" %>" alt="">
+        <a href="<%= cl_image_path peinture.photo.path %>" data-lightbox="image-1" data-title="<%= peinture.titre %>" class= "card-link">
+        <img src="<%= cl_image_path peinture.photo.path %>" alt="" class="hidden">
         </a>
 
         <% if user_signed_in? %>
