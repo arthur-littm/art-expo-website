@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'lightbox2-rails'
 
 
 group :development, :test do

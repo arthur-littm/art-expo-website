@@ -8,7 +8,9 @@
           <p><%= peinture.description %></p>
         </div>
 
-        <%= link_to "", cl_image_path(peinture.photo.path), class: "card-link" %>
+        <a href="<%= peinture.photo.path %>" data-lightbox="image-1" data-title="My caption" class= "card-link">
+          <%= cl_image_tag peinture.photo.path, class: "hidden" %>
+        </a>
 
         <% if user_signed_in? %>
 
