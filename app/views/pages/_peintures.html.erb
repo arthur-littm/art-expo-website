@@ -9,7 +9,7 @@
         </div>
 
         <a href="<%= peinture.photo.path %>" data-lightbox="image-1" data-title="My caption" class= "card-link">
-          <%= cl_image_tag peinture.photo.path, class: "hidden" %>
+        <img src="<%= image_path "banner.jpg" %>" alt="">
         </a>
 
         <% if user_signed_in? %>
